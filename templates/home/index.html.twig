@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+   
+    <h1> Coucou  {{nom}}{{prenom}}</h1>
+    {# This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'C:/Users/pcastro.cda/Documents/symfony/my_project/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'C:/Users/pcastro.cda/Documents/symfony/my_project/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
+    </ul> #}
+    <a href="{{"path:home"}}" >cliquez la </a> 
+    <table id="test" class="stripe">
+        <thead>
+            <tr><th>Numero du numero</th></tr>
+        </thead>
+        <tbody>
+            {% for numero in tableauTwig %}
+            <tr><th>{{numero}}</th></tr>
+            {% endfor %}
+
+
+        </tbody>
+    </table
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+
+
+<script>
+$(document).ready( function () {
+    $('#test').DataTable();
+} );
+</script>
+{% endblock %}
